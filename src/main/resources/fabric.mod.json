@@ -1,0 +1,28 @@
+{
+	"schemaVersion": 1,
+	"id": "creative_musicdisc",
+	"version": "${version}",
+	"name": "Creative Mode Music Discs",
+	"description": "Adds music discs containing Minecraft creative mode background music tracks (Dreiton, Aria Math, Blind Spots, and more).",
+	"authors": [
+		"nelideven", "Me!"
+	],
+	"contact": {
+		"homepage": "https://github.com/nelideven",
+		"sources": "https://github.com/nelideven/creative_musicdisc"
+	},
+	"license": "GPL-3.0-or-later",
+	"icon": "assets/creative_musicdisc/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.github.nelideven.creative_musicdisc.creative_musicdisc"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

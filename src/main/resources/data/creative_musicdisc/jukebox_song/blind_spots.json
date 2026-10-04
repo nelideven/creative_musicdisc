@@ -1,0 +1,8 @@
+{
+  "comparator_output": 13,
+  "description": {
+    "translate": "jukebox_song.creative_musicdisc.blind_spots"
+  },
+  "length_in_seconds": 332.0,
+  "sound_event": "creative_musicdisc:music_disc.blind_spots"
+}

@@ -1,0 +1,671 @@
+nyomanmc@nelpc:~/Documents/CodeProjects/minecraft_mods/creative_musicdisc$ ./gradlew
+Starting a Gradle Daemon, 6 stopped Daemons could not be reused, use --status for details
+Calculating task graph as no cached configuration is available for tasks: 
+
+> Configure project :
+Fabric Loom: 1.18.2
+
+> Task :help
+
+Welcome to Gradle 9.7.1.
+
+To run a build, run gradlew <task> ...
+
+To see a list of available tasks, run gradlew tasks
+
+To see more detail about a task, run gradlew help --task <task>
+
+To see a list of command-line options, run gradlew --help
+
+For more detail on using Gradle, see https://docs.gradle.org/9.7.1/userguide/command_line_interface.html
+
+For troubleshooting, visit https://help.gradle.org
+
+BUILD SUCCESSFUL in 6s
+1 actionable task: 1 executed
+Configuration cache entry stored.
+nyomanmc@nelpc:~/Documents/CodeProjects/minecraft_mods/creative_musicdisc$ ./gradlew tasks
+Calculating task graph as no cached configuration is available for tasks: tasks
+
+> Configure project :
+Fabric Loom: 1.18.2
+
+> Task :tasks
+
+------------------------------------------------------------
+Tasks runnable from root project 'creative_musicdisc'
+------------------------------------------------------------
+
+Build tasks
+-----------
+assemble - Assembles the outputs of this project.
+build - Assembles and tests this project.
+buildDependents - Assembles and tests this project and all projects that depend on it.
+buildNeeded - Assembles and tests this project and all projects it depends on.
+classes - Assembles main classes.
+clean - Deletes the build directory.
+clientClasses - Assembles client classes.
+jar - Assembles a jar archive containing the classes of the 'main' feature.
+sourcesJar - Assembles a jar archive containing the main sources.
+testClasses - Assembles test classes.
+
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build.
+updateDaemonJvm - Generates or updates the Gradle Daemon JVM criteria.
+wrapper - Generates Gradle wrapper files.
+
+Documentation tasks
+-------------------
+javadoc - Generates Javadoc API documentation for the 'main' feature.
+
+Fabric tasks
+------------
+configureClientLaunch - Setup the required files to launch the Minecraft client
+configureLaunch - Setup the required files to launch Minecraft
+downloadAssets - Downloads required game assets for Minecraft.
+downloadRenderDoc
+exportClasspath
+extractRenderDoc
+genClientOnlySources - Decompile minecraft (ClientOnly) using the default decompiler.
+genClientOnlySourcesWithCfr - Decompile minecraft using Cfr.
+genClientOnlySourcesWithVineflower - Decompile minecraft using Vineflower.
+genCommonSources - Decompile minecraft (Common) using the default decompiler.
+genCommonSourcesWithCfr - Decompile minecraft using Cfr.
+genCommonSourcesWithVineflower - Decompile minecraft using Vineflower.
+generateDLIConfig - Generate the DevLaunchInjector config file
+generateLog4jConfig - Generate the log4j config file
+genSources - Decompile minecraft using the default decompiler.
+genSourcesWithCfr - Decompile minecraft using Cfr.
+genSourcesWithVineflower - Decompile minecraft using Vineflower.
+microsoftLogin - Logs in to Minecraft with a Microsoft account.
+microsoftLogout - Removes the stored Microsoft account.
+processIncludeJars
+runClient - Starts the 'client' run configuration
+runClientRenderDoc
+runServer - Starts the 'server' run configuration
+startRenderDocUI
+
+Help tasks
+----------
+artifactTransforms - Displays the Artifact Transforms that can be executed in root project 'creative_musicdisc'.
+buildEnvironment - Displays all buildscript dependencies declared in root project 'creative_musicdisc'.
+dependencies - Displays all dependencies declared in root project 'creative_musicdisc'.
+dependencyInsight - Displays the insight into a specific dependency in root project 'creative_musicdisc'.
+help - Displays a help message.
+javaToolchains - Displays the detected java toolchains.
+outgoingVariants - Displays the outgoing variants of root project 'creative_musicdisc'.
+projects - Displays the sub-projects of root project 'creative_musicdisc'.
+properties - Displays the properties of root project 'creative_musicdisc'.
+resolvableConfigurations - Displays the configurations that can be resolved in root project 'creative_musicdisc'.
+tasks - Displays the tasks runnable from root project 'creative_musicdisc'.
+
+IDE tasks
+---------
+cleanEclipse - Cleans all Eclipse files.
+eclipse - Generates all Eclipse files.
+genEclipseRuns - Generates Eclipse run configurations for this project.
+ideaSyncTask
+vscode - Generates VSCode launch configurations.
+
+Publishing tasks
+----------------
+generateMetadataFileForMavenJavaPublication - Generates the Gradle metadata file for publication 'mavenJava'.
+generatePomFileForMavenJavaPublication - Generates the Maven POM file for publication 'mavenJava'.
+publish - Publishes all publications produced by this project.
+publishMavenJavaPublicationToMavenLocal - Publishes Maven publication 'mavenJava' to the local Maven repository.
+publishToMavenLocal - Publishes all Maven publications produced by this project to the local Maven cache.
+
+Verification tasks
+------------------
+check - Runs all checks.
+test - Runs the test suite.
+validateAccessWidener - Validate all the rules in the access widener against the Minecraft jar
+
+Rules
+-----
+Pattern: clean<TaskName>: Cleans the output files of a task.
+Pattern: build<ConfigurationName>: Assembles the artifacts of a configuration.
+
+To see all tasks and more detail, run gradlew tasks --all
+
+To see more detail about a task, run gradlew help --task <task>
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
+Configuration cache entry stored.
+nyomanmc@nelpc:~/Documents/CodeProjects/minecraft_mods/creative_musicdisc$ ./gradlew check
+Calculating task graph as no cached configuration is available for tasks: check
+
+> Configure project :
+Fabric Loom: 1.18.2
+
+> Task :compileJava FAILED
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:4: error: package net.fabricmc.fabric.api.itemgroup.v1 does not exist
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+                                           ^
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:5: error: package net.minecraft.item does not exist
+import net.minecraft.item.Item;
+                         ^
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:6: error: package net.minecraft.item does not exist
+import net.minecraft.item.ItemGroups;
+                         ^
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:7: error: package net.minecraft.registry does not exist
+import net.minecraft.registry.Registries;
+                             ^
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:8: error: package net.minecraft.registry does not exist
+import net.minecraft.registry.Registry;
+                             ^
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:9: error: package net.minecraft.registry does not exist
+import net.minecraft.registry.RegistryKey;
+                             ^
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:10: error: package net.minecraft.registry does not exist
+import net.minecraft.registry.RegistryKeys;
+                             ^
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:11: error: package net.minecraft.sound does not exist
+import net.minecraft.sound.SoundEvent;
+                          ^
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:12: error: package net.minecraft.block.jukebox does not exist
+import net.minecraft.block.jukebox.JukeboxSong;
+                                  ^
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:13: error: cannot find symbol
+import net.minecraft.util.Identifier;
+                         ^
+  symbol:   class Identifier
+  location: package net.minecraft.util
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:19: error: cannot find symbol
+    public static final SoundEvent SOUND_ARIA_MATH = registerSound("music_disc.aria_math");
+                        ^
+  symbol:   class SoundEvent
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:20: error: cannot find symbol
+    public static final SoundEvent SOUND_BIOME_FEST = registerSound("music_disc.biome_fest");
+                        ^
+  symbol:   class SoundEvent
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:21: error: cannot find symbol
+    public static final SoundEvent SOUND_BLIND_SPOTS = registerSound("music_disc.blind_spots");
+                        ^
+  symbol:   class SoundEvent
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:22: error: cannot find symbol
+    public static final SoundEvent SOUND_DREITON = registerSound("music_disc.dreiton");
+                        ^
+  symbol:   class SoundEvent
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:23: error: cannot find symbol
+    public static final SoundEvent SOUND_HAUNT_MUSKIE = registerSound("music_disc.haunt_muskie");
+                        ^
+  symbol:   class SoundEvent
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:24: error: cannot find symbol
+    public static final SoundEvent SOUND_TASWELL = registerSound("music_disc.taswell");
+                        ^
+  symbol:   class SoundEvent
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:27: error: cannot find symbol
+    public static final RegistryKey<JukeboxSong> SONG_ARIA_MATH = registerSongKey("aria_math");
+                        ^
+  symbol:   class RegistryKey
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:27: error: cannot find symbol
+    public static final RegistryKey<JukeboxSong> SONG_ARIA_MATH = registerSongKey("aria_math");
+                                    ^
+  symbol:   class JukeboxSong
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:28: error: cannot find symbol
+    public static final RegistryKey<JukeboxSong> SONG_BIOME_FEST = registerSongKey("biome_fest");
+                        ^
+  symbol:   class RegistryKey
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:28: error: cannot find symbol
+    public static final RegistryKey<JukeboxSong> SONG_BIOME_FEST = registerSongKey("biome_fest");
+                                    ^
+  symbol:   class JukeboxSong
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:29: error: cannot find symbol
+    public static final RegistryKey<JukeboxSong> SONG_BLIND_SPOTS = registerSongKey("blind_spots");
+                        ^
+  symbol:   class RegistryKey
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:29: error: cannot find symbol
+    public static final RegistryKey<JukeboxSong> SONG_BLIND_SPOTS = registerSongKey("blind_spots");
+                                    ^
+  symbol:   class JukeboxSong
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:30: error: cannot find symbol
+    public static final RegistryKey<JukeboxSong> SONG_DREITON = registerSongKey("dreiton");
+                        ^
+  symbol:   class RegistryKey
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:30: error: cannot find symbol
+    public static final RegistryKey<JukeboxSong> SONG_DREITON = registerSongKey("dreiton");
+                                    ^
+  symbol:   class JukeboxSong
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:31: error: cannot find symbol
+    public static final RegistryKey<JukeboxSong> SONG_HAUNT_MUSKIE = registerSongKey("haunt_muskie");
+                        ^
+  symbol:   class RegistryKey
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:31: error: cannot find symbol
+    public static final RegistryKey<JukeboxSong> SONG_HAUNT_MUSKIE = registerSongKey("haunt_muskie");
+                                    ^
+  symbol:   class JukeboxSong
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:32: error: cannot find symbol
+    public static final RegistryKey<JukeboxSong> SONG_TASWELL = registerSongKey("taswell");
+                        ^
+  symbol:   class RegistryKey
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:32: error: cannot find symbol
+    public static final RegistryKey<JukeboxSong> SONG_TASWELL = registerSongKey("taswell");
+                                    ^
+  symbol:   class JukeboxSong
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:35: error: cannot find symbol
+    public static final Item MUSIC_DISC_ARIA_MATH = registerDisc("music_disc_aria_math", SONG_ARIA_MATH);
+                        ^
+  symbol:   class Item
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:36: error: cannot find symbol
+    public static final Item MUSIC_DISC_BIOME_FEST = registerDisc("music_disc_biome_fest", SONG_BIOME_FEST);
+                        ^
+  symbol:   class Item
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:37: error: cannot find symbol
+    public static final Item MUSIC_DISC_BLIND_SPOTS = registerDisc("music_disc_blind_spots", SONG_BLIND_SPOTS);
+                        ^
+  symbol:   class Item
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:38: error: cannot find symbol
+    public static final Item MUSIC_DISC_DREITON = registerDisc("music_disc_dreiton", SONG_DREITON);
+                        ^
+  symbol:   class Item
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:39: error: cannot find symbol
+    public static final Item MUSIC_DISC_HAUNT_MUSKIE = registerDisc("music_disc_haunt_muskie", SONG_HAUNT_MUSKIE);
+                        ^
+  symbol:   class Item
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:40: error: cannot find symbol
+    public static final Item MUSIC_DISC_TASWELL = registerDisc("music_disc_taswell", SONG_TASWELL);
+                        ^
+  symbol:   class Item
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:56: error: cannot find symbol
+    private static SoundEvent registerSound(String name) {
+                   ^
+  symbol:   class SoundEvent
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:62: error: cannot find symbol
+    private static RegistryKey<JukeboxSong> registerSongKey(String name) {
+                   ^
+  symbol:   class RegistryKey
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:62: error: cannot find symbol
+    private static RegistryKey<JukeboxSong> registerSongKey(String name) {
+                               ^
+  symbol:   class JukeboxSong
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:67: error: cannot find symbol
+    private static Item registerDisc(String name, RegistryKey<JukeboxSong> songKey) {
+                                                  ^
+  symbol:   class RegistryKey
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:67: error: cannot find symbol
+    private static Item registerDisc(String name, RegistryKey<JukeboxSong> songKey) {
+                                                              ^
+  symbol:   class JukeboxSong
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:67: error: cannot find symbol
+    private static Item registerDisc(String name, RegistryKey<JukeboxSong> songKey) {
+                   ^
+  symbol:   class Item
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:45: error: cannot find symbol
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
+                                           ^
+  symbol:   variable ItemGroups
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:45: error: cannot find symbol
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
+        ^
+  symbol:   variable ItemGroupEvents
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:57: error: cannot find symbol
+        Identifier id = Identifier.of(MOD_ID, name);
+        ^
+  symbol:   class Identifier
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:57: error: cannot find symbol
+        Identifier id = Identifier.of(MOD_ID, name);
+                        ^
+  symbol:   variable Identifier
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:58: error: cannot find symbol
+        return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
+                                 ^
+  symbol:   variable Registries
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:58: error: cannot find symbol
+        return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
+               ^
+  symbol:   variable Registry
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:58: error: cannot find symbol
+        return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
+                                                             ^
+  symbol:   variable SoundEvent
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:63: error: cannot find symbol
+        return RegistryKey.of(RegistryKeys.JUKEBOX_SONG, Identifier.of(MOD_ID, name));
+                              ^
+  symbol:   variable RegistryKeys
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:63: error: cannot find symbol
+        return RegistryKey.of(RegistryKeys.JUKEBOX_SONG, Identifier.of(MOD_ID, name));
+               ^
+  symbol:   variable RegistryKey
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:63: error: cannot find symbol
+        return RegistryKey.of(RegistryKeys.JUKEBOX_SONG, Identifier.of(MOD_ID, name));
+                                                         ^
+  symbol:   variable Identifier
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:69: error: cannot find symbol
+            Registries.ITEM,
+            ^
+  symbol:   variable Registries
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:71: error: cannot find symbol
+            new Item(new Item.Settings().jukeboxPlayable(songKey).maxCount(1))
+                ^
+  symbol:   class Item
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:71: error: package Item does not exist
+            new Item(new Item.Settings().jukeboxPlayable(songKey).maxCount(1))
+                             ^
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:68: error: cannot find symbol
+        return Registry.register(
+               ^
+  symbol:   variable Registry
+  location: class creative_musicdisc
+/home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:70: error: cannot find symbol
+            Identifier.of(MOD_ID, name),
+            ^
+  symbol:   variable Identifier
+  location: class creative_musicdisc
+55 errors
+
+[Incubating] Problems report is available at: file:///home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
+> Compilation failed; see the compiler output below.
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:13: error: cannot find symbol
+  import net.minecraft.util.Identifier;
+                           ^
+    symbol:   class Identifier
+    location: package net.minecraft.util
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:19: error: cannot find symbol
+      public static final SoundEvent SOUND_ARIA_MATH = registerSound("music_disc.aria_math");
+                          ^
+    symbol:   class SoundEvent
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:20: error: cannot find symbol
+      public static final SoundEvent SOUND_BIOME_FEST = registerSound("music_disc.biome_fest");
+                          ^
+    symbol:   class SoundEvent
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:21: error: cannot find symbol
+      public static final SoundEvent SOUND_BLIND_SPOTS = registerSound("music_disc.blind_spots");
+                          ^
+    symbol:   class SoundEvent
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:22: error: cannot find symbol
+      public static final SoundEvent SOUND_DREITON = registerSound("music_disc.dreiton");
+                          ^
+    symbol:   class SoundEvent
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:23: error: cannot find symbol
+      public static final SoundEvent SOUND_HAUNT_MUSKIE = registerSound("music_disc.haunt_muskie");
+                          ^
+    symbol:   class SoundEvent
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:24: error: cannot find symbol
+      public static final SoundEvent SOUND_TASWELL = registerSound("music_disc.taswell");
+                          ^
+    symbol:   class SoundEvent
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:27: error: cannot find symbol
+      public static final RegistryKey<JukeboxSong> SONG_ARIA_MATH = registerSongKey("aria_math");
+                          ^
+    symbol:   class RegistryKey
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:27: error: cannot find symbol
+      public static final RegistryKey<JukeboxSong> SONG_ARIA_MATH = registerSongKey("aria_math");
+                                      ^
+    symbol:   class JukeboxSong
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:28: error: cannot find symbol
+      public static final RegistryKey<JukeboxSong> SONG_BIOME_FEST = registerSongKey("biome_fest");
+                          ^
+    symbol:   class RegistryKey
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:28: error: cannot find symbol
+      public static final RegistryKey<JukeboxSong> SONG_BIOME_FEST = registerSongKey("biome_fest");
+                                      ^
+    symbol:   class JukeboxSong
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:29: error: cannot find symbol
+      public static final RegistryKey<JukeboxSong> SONG_BLIND_SPOTS = registerSongKey("blind_spots");
+                          ^
+    symbol:   class RegistryKey
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:29: error: cannot find symbol
+      public static final RegistryKey<JukeboxSong> SONG_BLIND_SPOTS = registerSongKey("blind_spots");
+                                      ^
+    symbol:   class JukeboxSong
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:30: error: cannot find symbol
+      public static final RegistryKey<JukeboxSong> SONG_DREITON = registerSongKey("dreiton");
+                          ^
+    symbol:   class RegistryKey
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:30: error: cannot find symbol
+      public static final RegistryKey<JukeboxSong> SONG_DREITON = registerSongKey("dreiton");
+                                      ^
+    symbol:   class JukeboxSong
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:31: error: cannot find symbol
+      public static final RegistryKey<JukeboxSong> SONG_HAUNT_MUSKIE = registerSongKey("haunt_muskie");
+                          ^
+    symbol:   class RegistryKey
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:31: error: cannot find symbol
+      public static final RegistryKey<JukeboxSong> SONG_HAUNT_MUSKIE = registerSongKey("haunt_muskie");
+                                      ^
+    symbol:   class JukeboxSong
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:32: error: cannot find symbol
+      public static final RegistryKey<JukeboxSong> SONG_TASWELL = registerSongKey("taswell");
+                          ^
+    symbol:   class RegistryKey
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:32: error: cannot find symbol
+      public static final RegistryKey<JukeboxSong> SONG_TASWELL = registerSongKey("taswell");
+                                      ^
+    symbol:   class JukeboxSong
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:35: error: cannot find symbol
+      public static final Item MUSIC_DISC_ARIA_MATH = registerDisc("music_disc_aria_math", SONG_ARIA_MATH);
+                          ^
+    symbol:   class Item
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:36: error: cannot find symbol
+      public static final Item MUSIC_DISC_BIOME_FEST = registerDisc("music_disc_biome_fest", SONG_BIOME_FEST);
+                          ^
+    symbol:   class Item
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:37: error: cannot find symbol
+      public static final Item MUSIC_DISC_BLIND_SPOTS = registerDisc("music_disc_blind_spots", SONG_BLIND_SPOTS);
+                          ^
+    symbol:   class Item
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:38: error: cannot find symbol
+      public static final Item MUSIC_DISC_DREITON = registerDisc("music_disc_dreiton", SONG_DREITON);
+                          ^
+    symbol:   class Item
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:39: error: cannot find symbol
+      public static final Item MUSIC_DISC_HAUNT_MUSKIE = registerDisc("music_disc_haunt_muskie", SONG_HAUNT_MUSKIE);
+                          ^
+    symbol:   class Item
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:40: error: cannot find symbol
+      public static final Item MUSIC_DISC_TASWELL = registerDisc("music_disc_taswell", SONG_TASWELL);
+                          ^
+    symbol:   class Item
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:56: error: cannot find symbol
+      private static SoundEvent registerSound(String name) {
+                     ^
+    symbol:   class SoundEvent
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:62: error: cannot find symbol
+      private static RegistryKey<JukeboxSong> registerSongKey(String name) {
+                     ^
+    symbol:   class RegistryKey
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:62: error: cannot find symbol
+      private static RegistryKey<JukeboxSong> registerSongKey(String name) {
+                                 ^
+    symbol:   class JukeboxSong
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:67: error: cannot find symbol
+      private static Item registerDisc(String name, RegistryKey<JukeboxSong> songKey) {
+                                                    ^
+    symbol:   class RegistryKey
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:67: error: cannot find symbol
+      private static Item registerDisc(String name, RegistryKey<JukeboxSong> songKey) {
+                                                                ^
+    symbol:   class JukeboxSong
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:67: error: cannot find symbol
+      private static Item registerDisc(String name, RegistryKey<JukeboxSong> songKey) {
+                     ^
+    symbol:   class Item
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:45: error: cannot find symbol
+          ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
+                                             ^
+    symbol:   variable ItemGroups
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:45: error: cannot find symbol
+          ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> {
+          ^
+    symbol:   variable ItemGroupEvents
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:57: error: cannot find symbol
+          Identifier id = Identifier.of(MOD_ID, name);
+          ^
+    symbol:   class Identifier
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:57: error: cannot find symbol
+          Identifier id = Identifier.of(MOD_ID, name);
+                          ^
+    symbol:   variable Identifier
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:58: error: cannot find symbol
+          return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
+                                   ^
+    symbol:   variable Registries
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:58: error: cannot find symbol
+          return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
+                 ^
+    symbol:   variable Registry
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:58: error: cannot find symbol
+          return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
+                                                               ^
+    symbol:   variable SoundEvent
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:63: error: cannot find symbol
+          return RegistryKey.of(RegistryKeys.JUKEBOX_SONG, Identifier.of(MOD_ID, name));
+                                ^
+    symbol:   variable RegistryKeys
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:63: error: cannot find symbol
+          return RegistryKey.of(RegistryKeys.JUKEBOX_SONG, Identifier.of(MOD_ID, name));
+                 ^
+    symbol:   variable RegistryKey
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:63: error: cannot find symbol
+          return RegistryKey.of(RegistryKeys.JUKEBOX_SONG, Identifier.of(MOD_ID, name));
+                                                           ^
+    symbol:   variable Identifier
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:69: error: cannot find symbol
+              Registries.ITEM,
+              ^
+    symbol:   variable Registries
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:71: error: cannot find symbol
+              new Item(new Item.Settings().jukeboxPlayable(songKey).maxCount(1))
+                  ^
+    symbol:   class Item
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:68: error: cannot find symbol
+          return Registry.register(
+                 ^
+    symbol:   variable Registry
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:70: error: cannot find symbol
+              Identifier.of(MOD_ID, name),
+              ^
+    symbol:   variable Identifier
+    location: class creative_musicdisc
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:4: error: package net.fabricmc.fabric.api.itemgroup.v1 does not exist
+  import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+                                             ^
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:5: error: package net.minecraft.item does not exist
+  import net.minecraft.item.Item;
+                           ^
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:6: error: package net.minecraft.item does not exist
+  import net.minecraft.item.ItemGroups;
+                           ^
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:7: error: package net.minecraft.registry does not exist
+  import net.minecraft.registry.Registries;
+                               ^
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:8: error: package net.minecraft.registry does not exist
+  import net.minecraft.registry.Registry;
+                               ^
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:9: error: package net.minecraft.registry does not exist
+  import net.minecraft.registry.RegistryKey;
+                               ^
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:10: error: package net.minecraft.registry does not exist
+  import net.minecraft.registry.RegistryKeys;
+                               ^
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:11: error: package net.minecraft.sound does not exist
+  import net.minecraft.sound.SoundEvent;
+                            ^
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:12: error: package net.minecraft.block.jukebox does not exist
+  import net.minecraft.block.jukebox.JukeboxSong;
+                                    ^
+  /home/nyomanmc/Documents/CodeProjects/minecraft_mods/creative_musicdisc/src/main/java/com/github/nelideven/creative_musicdisc/creative_musicdisc.java:71: error: package Item does not exist
+              new Item(new Item.Settings().jukeboxPlayable(songKey).maxCount(1))
+                               ^
+  55 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 2s
+3 actionable tasks: 3 executed
+Configuration cache entry stored.

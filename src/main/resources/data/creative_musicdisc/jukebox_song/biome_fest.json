@@ -1,0 +1,8 @@
+{
+  "comparator_output": 12,
+  "description": {
+    "translate": "jukebox_song.creative_musicdisc.biome_fest"
+  },
+  "length_in_seconds": 382.0,
+  "sound_event": "creative_musicdisc:music_disc.biome_fest"
+}
