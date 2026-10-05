@@ -1,5 +1,7 @@
 package com.github.nelideven.creative_musicdisc;
 
+import java.util.function.Function;
+
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 
@@ -13,8 +15,10 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.JukeboxSong;
 import net.minecraft.world.item.Rarity;
-
-import java.util.function.Function;
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.entries.EmptyLootItem;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
 
 public class creative_musicdisc implements ModInitializer {
     public static final String MOD_ID = "creative_musicdisc";
@@ -81,6 +85,7 @@ public class creative_musicdisc implements ModInitializer {
     // --- Functions ---
     @Override
     public void onInitialize() {
+        // Inject to the Tools and Utilities creative tab
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(creativeTab -> {
             creativeTab.accept(MUSIC_DISC_ARIA_MATH);
             creativeTab.accept(MUSIC_DISC_BIOME_FEST);
@@ -88,6 +93,26 @@ public class creative_musicdisc implements ModInitializer {
             creativeTab.accept(MUSIC_DISC_DREITON);
             creativeTab.accept(MUSIC_DISC_HAUNT_MUSKIE);
             creativeTab.accept(MUSIC_DISC_TASWELL);
+        });
+        // Inject to the loot tables for various chests
+        LootTableEvents.MODIFY.register((key, builder, source, registries) -> {
+            if (key.equals(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath("minecraft", "chests/simple_dungeon"))) ||
+                key.equals(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath("minecraft", "chests/abandoned_mineshaft"))) ||
+                key.equals(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath("minecraft", "chests/stronghold_corridor"))) ||
+                key.equals(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath("minecraft", "chests/stronghold_crossing"))) ||
+                key.equals(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath("minecraft", "chests/stronghold_room")))) {
+
+                LootPool.Builder poolBuilder = LootPool.lootPool()
+                        .add(LootItem.lootTableItem(MUSIC_DISC_ARIA_MATH).setWeight(1))
+                        .add(LootItem.lootTableItem(MUSIC_DISC_BIOME_FEST).setWeight(1))
+                        .add(LootItem.lootTableItem(MUSIC_DISC_BLIND_SPOTS).setWeight(1))
+                        .add(LootItem.lootTableItem(MUSIC_DISC_DREITON).setWeight(1))
+                        .add(LootItem.lootTableItem(MUSIC_DISC_HAUNT_MUSKIE).setWeight(1))
+                        .add(LootItem.lootTableItem(MUSIC_DISC_TASWELL).setWeight(1))
+                        .add(EmptyLootItem.emptyItem().setWeight(24)); // Weight balance for ~20% chance
+
+                builder.withPool(poolBuilder);
+            }
         });
     }
 }
