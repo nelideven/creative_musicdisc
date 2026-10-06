@@ -18,7 +18,7 @@ A Fabric mod that adds C418's Creative Mode background music as playable music d
 This project is licensed under the [GNU General Public License v3.0 or later](LICENSE).
 
 ## Requirements
-- **Minecraft**: `~26.3`
-- **Fabric Loader**: `>=0.19.5`
+- **Minecraft**: `26.1 - 26.3`
+- **Fabric Loader**: `>=0.18.4`
 - Any versions of the **Fabric API**
 - **Java**: `>=25`
