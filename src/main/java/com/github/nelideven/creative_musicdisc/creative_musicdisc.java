@@ -1,9 +1,12 @@
 package com.github.nelideven.creative_musicdisc;
 
+import java.lang.reflect.Method;
+import java.util.Set;
 import java.util.function.Function;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -15,10 +18,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.JukeboxSong;
 import net.minecraft.world.item.Rarity;
-import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.world.level.storage.loot.LootPool;
-import net.minecraft.world.level.storage.loot.entries.EmptyLootItem;
-import net.minecraft.world.level.storage.loot.entries.LootItem;
 
 public class creative_musicdisc implements ModInitializer {
     public static final String MOD_ID = "creative_musicdisc";
@@ -82,36 +82,81 @@ public class creative_musicdisc implements ModInitializer {
         create("music_disc_taswell"), Item::new, new Item.Properties().jukeboxPlayable(SONG_TASWELL).stacksTo(1).rarity(Rarity.UNCOMMON)
     );
 
+    public static final Item[] ALL_DISCS = {
+        MUSIC_DISC_ARIA_MATH,
+        MUSIC_DISC_BIOME_FEST,
+        MUSIC_DISC_BLIND_SPOTS,
+        MUSIC_DISC_DREITON,
+        MUSIC_DISC_HAUNT_MUSKIE,
+        MUSIC_DISC_TASWELL
+    };
+
+    private static final Set<String> TARGET_CHESTS = Set.of(
+        "chests/simple_dungeon",
+        "chests/abandoned_mineshaft",
+        "chests/stronghold_corridor",
+        "chests/stronghold_crossing",
+        "chests/stronghold_room"
+    );
+
     // --- Functions ---
     @Override
     public void onInitialize() {
         // Inject to the Tools and Utilities creative tab
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(creativeTab -> {
-            creativeTab.accept(MUSIC_DISC_ARIA_MATH);
-            creativeTab.accept(MUSIC_DISC_BIOME_FEST);
-            creativeTab.accept(MUSIC_DISC_BLIND_SPOTS);
-            creativeTab.accept(MUSIC_DISC_DREITON);
-            creativeTab.accept(MUSIC_DISC_HAUNT_MUSKIE);
-            creativeTab.accept(MUSIC_DISC_TASWELL);
+            for (Item disc : ALL_DISCS) {
+                creativeTab.accept(disc);
+            }
         });
-        // Inject to the loot tables for various chests
-        LootTableEvents.MODIFY.register((key, builder, source, registries) -> {
-            if (key.equals(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath("minecraft", "chests/simple_dungeon"))) ||
-                key.equals(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath("minecraft", "chests/abandoned_mineshaft"))) ||
-                key.equals(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath("minecraft", "chests/stronghold_corridor"))) ||
-                key.equals(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath("minecraft", "chests/stronghold_crossing"))) ||
-                key.equals(ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath("minecraft", "chests/stronghold_room")))) {
 
-                LootPool.Builder poolBuilder = LootPool.lootPool()
-                        .add(LootItem.lootTableItem(MUSIC_DISC_ARIA_MATH).setWeight(1))
-                        .add(LootItem.lootTableItem(MUSIC_DISC_BIOME_FEST).setWeight(1))
-                        .add(LootItem.lootTableItem(MUSIC_DISC_BLIND_SPOTS).setWeight(1))
-                        .add(LootItem.lootTableItem(MUSIC_DISC_DREITON).setWeight(1))
-                        .add(LootItem.lootTableItem(MUSIC_DISC_HAUNT_MUSKIE).setWeight(1))
-                        .add(LootItem.lootTableItem(MUSIC_DISC_TASWELL).setWeight(1))
-                        .add(EmptyLootItem.emptyItem().setWeight(24)); // Weight balance for ~20% chance
+        // Inject to loot tables dynamically via Reflection
+        registerLootInjections();
+    }
+
+    private void registerLootInjections() {
+        LootTableEvents.MODIFY.register((key, builder, source, registries) -> {
+            String path = key.identifier().getPath();
+            if (!TARGET_CHESTS.contains(path)) {
+                return;
+            }
+
+            try {
+                LootPool.Builder poolBuilder = LootPool.lootPool();
+
+                Class<?> lootItemClass = Class.forName("net.minecraft.world.level.storage.loot.entries.LootItem");
+                Method lootTableItemMethod = lootItemClass.getMethod("lootTableItem", net.minecraft.world.level.ItemLike.class);
+
+                Method setWeightMethod = null;
+                Method addMethod = null;
+
+                for (Item disc : ALL_DISCS) {
+                    Object entryBuilder = lootTableItemMethod.invoke(null, disc);
+
+                    if (setWeightMethod == null) {
+                        setWeightMethod = entryBuilder.getClass().getMethod("setWeight", int.class);
+                    }
+                    setWeightMethod.invoke(entryBuilder, 1);
+
+                    if (addMethod == null) {
+                        Class<?> builderClass = Class.forName("net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer$Builder");
+                        addMethod = poolBuilder.getClass().getMethod("add", builderClass);
+                    }
+                    addMethod.invoke(poolBuilder, entryBuilder);
+                }
+
+                // Empty loot entry for weight balance
+                Class<?> emptyItemClass = Class.forName("net.minecraft.world.level.storage.loot.entries.EmptyLootItem");
+                Method emptyItemMethod = emptyItemClass.getMethod("emptyItem");
+                Object emptyEntryBuilder = emptyItemMethod.invoke(null);
+                setWeightMethod.invoke(emptyEntryBuilder, 24);
+
+                addMethod.invoke(poolBuilder, emptyEntryBuilder);
 
                 builder.withPool(poolBuilder);
+
+            } catch (Throwable t) {
+                System.err.println("Failed to inject music discs into chest: " + path);
+                t.printStackTrace();
             }
         });
     }
