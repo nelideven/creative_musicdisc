@@ -20,5 +20,5 @@ This project is licensed under the [GNU General Public License v3.0 or later](LI
 ## Requirements
 - **Minecraft**: `26.1 - 26.3`
 - **Fabric Loader**: `>=0.18.4`
-- Any versions of the **Fabric API**
+- **Fabric API**: `>=0.155.2`
 - **Java**: `>=25`
