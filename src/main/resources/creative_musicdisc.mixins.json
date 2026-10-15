@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "com.github.nelideven.creative_musicdisc.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"ConnectionGuardMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

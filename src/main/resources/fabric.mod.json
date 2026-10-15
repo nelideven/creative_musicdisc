@@ -19,6 +19,9 @@
 			"com.github.nelideven.creative_musicdisc.creative_musicdisc"
 		]
 	},
+	"mixins": [
+		"creative_musicdisc.mixins.json"
+	],
 	"depends": {
 		"fabricloader": ">=0.18.4",
 		"minecraft": ">=26.1 <=26.3",
