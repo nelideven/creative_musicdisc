@@ -22,3 +22,6 @@ This project is licensed under the [GNU General Public License v3.0 or later](LI
 - **Fabric Loader**: `>=0.18.4`
 - **Fabric API**: `>=0.155.2`
 - **Java**: `>=25`
+
+### Regarding AI usage
+I would like to clarify AI usage in this project. **AI was indeed used** in half of the parts of the Java code, but all assets are made without.
