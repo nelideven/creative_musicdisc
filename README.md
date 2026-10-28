@@ -24,4 +24,5 @@ This project is licensed under the [GNU General Public License v3.0 or later](LI
 - **Java**: `>=25`
 
 ### Regarding AI usage
-I would like to clarify AI usage in this project. **AI was indeed used** in half of the parts of the Java code, but all assets are made without.
+-# I would like to clarify AI usage in this project. **AI was indeed used** in half of the parts of the Java code, but it has been extensively tested. All assets were made without AI.
+-# **It is your choice and preference to use this mod.** If you are bothered by AI usage in this project, you are free to have your choices.
